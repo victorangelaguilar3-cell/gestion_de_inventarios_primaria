@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Inventarios - Escuela Primaria "JOSE MARIA MORELOS Y PAVON"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Gestor de Inventarios</h1>
+        <h2>Escuela Primaria "JOSE MARIA MORELOS Y PAVON"</h2>
+
+        <!-- Pestañas -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="resumen">📈 Resumen</button>
+            <button class="tab-btn" data-tab="computacion">🖥️ Sala de Computación</button>
+            <button class="tab-btn" data-tab="biblioteca">📚 Biblioteca</button>
+            <button class="tab-btn" data-tab="direccion">🏫 Dirección</button>
+        </div>
+
+        <!-- Contenido de pestañas -->
+        <div id="resumen" class="tab-content active">
+            <h3>Resumen General</h3>
+            <div class="stats-grid" id="statsGrid">
+                <!-- Los datos se llenan con JavaScript -->
+            </div>
+        </div>
+
+        <div id="computacion" class="tab-content">
+            <h3>🖥️ Inventario - Sala de Computación</h3>
+            <button class="btn-add" onclick="agregarFila('computacion')">+ Agregar equipo</button>
+            <div class="table-wrapper">
+                <table id="tablaComputacion">
+                    <thead>
+                        <tr><th>ID</th><th>Equipo</th><th>Marca</th><th>Modelo</th><th>Estado</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="biblioteca" class="tab-content">
+            <h3>📚 Inventario - Biblioteca</h3>
+            <button class="btn-add" onclick="agregarFila('biblioteca')">+ Agregar libro</button>
+            <div class="table-wrapper">
+                <table id="tablaBiblioteca">
+                    <thead>
+                        <tr><th>ID</th><th>Título</th><th>Autor</th><th>Cantidad</th><th>Estado físico</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="direccion" class="tab-content">
+            <h3>🏫 Inventario - Dirección</h3>
+            <button class="btn-add" onclick="agregarFila('direccion')">+ Agregar artículo</button>
+            <div class="table-wrapper">
+                <table id="tablaDireccion">
+                    <thead>
+                        <tr><th>ID</th><th>Artículo</th><th>Marca</th><th>Cantidad</th><th>Ubicación</th><th>Estado</th><th>Acciones</th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
